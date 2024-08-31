@@ -1,0 +1,37 @@
+name: GitHub Pages Jekyll Site Deployment
+
+on:
+  push:
+    branches:
+      - master  # Change this to your default branch if it's not 'main'
+  pull_request:
+    branches:
+      - master  # Optional: Run the workflow on pull requests as well
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.1 # Use the Ruby version compatible with your Jekyll site
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Build the Jekyll site
+      run: bundle exec jekyll build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub provides this token automatically
+        publish_dir: ./_site  # Default output directory for Jekyll builds
+        keep_files: true # Optional: to keep existing files on the gh-pages branch
