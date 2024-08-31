@@ -2,6 +2,7 @@
 title: My Resume
 description: A beautiful Jekyll theme for creating a resume
 url: 'http://webjeda.com'  # Update to your site's URL
+base_url: "online-cv"
 
 # Style options
 theme: minima  # Specify your theme here, or use 'minima' as a default
