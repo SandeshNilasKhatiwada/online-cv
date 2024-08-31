@@ -143,27 +143,33 @@ blogs:
   title: Blogs
 
   blogs-list:
-    - title: Hello World
+    - id: 1
+      title: Hello World
       author: Sandesh Nilas Khatiwada
       date: 2020-05-20
       description: It's my first blog on Jekyll. And I am having fun with it.
 
-    - title: Understanding Jekyll and GitHub Pages
+    - id: 2
+      title: Understanding Jekyll and GitHub Pages
       author: Sandesh Nilas Khatiwada
       date: 2020-06-01
       description: A beginner's guide to using Jekyll with GitHub Pages to host personal blogs.
 
-    - title: CSS Tips and Tricks for Jekyll
+    - id: 3
+      title: CSS Tips and Tricks for Jekyll
       author: Sandesh Nilas Khatiwada
       date: 2020-06-10
       description: Enhancing the visual appeal of your Jekyll site with custom CSS.
 
-    - title: Exploring Jekyll Themes
+    - id: 4
+      title: Exploring Jekyll Themes
       author: Sandesh Nilas Khatiwada
       date: 2020-06-15
       description: How to choose and customize the best Jekyll theme for your website.
 
-    - title: Using Front Matter in Jekyll
+    - id: 5
+      title: Using Front Matter in Jekyll
       author: Sandesh Nilas Khatiwada
       date: 2020-06-25
       description: A deep dive into the front matter and its role in Jekyll.
+

@@ -1,32 +1,22 @@
-#Update all the sections by editing the data.yml file inside _data folder.
-
 # Site Settings
 title: My Resume
-baseurl: "online-cv"
-url: 'http://webjeda.com'
+description: A beautiful Jekyll theme for creating a resume
+url: 'http://webjeda.com'  # Update to your site's URL
 
-#change it according to your repository name
-# disabling since we are using a custom domain
-#baseurl: '/online-cv' 
-
-description: A beautiful Jekyll theme for creating resume
-# Style will be applied only after restarting the build or serve. Just choose one of the options.
-theme_skin: blue # blue turquoise green berry orange ceramic teal oceanstale
-chrome_mobile_color: #use hex colors (ex:#1976d2) or leave empty if you don't want a color for chrome mobile searchbar
-
-# Tracker
-analytics: UA-83979019-1
+# Style options
+theme: minima  # Specify your theme here, or use 'minima' as a default
+theme_skin: blue
+chrome_mobile_color: 
 
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed
 
 # Build settings
 compress-site: yes
-
 encoding: "utf-8"
-compress_html: # - http://jch.penibelst.de/
+compress_html:
   clippings: all
   ignore:
     envs: development
@@ -37,17 +27,47 @@ host: 0.0.0.0
 safe: false
 
 # Collections Settings for Pages
+# You don't need to configure a custom collection if using default posts
 collections:
-  pages:
-    output: true
+  posts:
+    output: true  # This is true by default for posts, but you can specify it explicitly
+
+# Include directories
+include:
+  - _pages  # Include any additional directories if needed
+
+# Exclude directories (optional, specify if there are directories you don't want to process)
+exclude:
+  - node_modules
+  - vendor/bundle
+  - Gemfile
+  - Gemfile.lock
 
 # Permalink Settings
-# Define the default permalink structure for all pages
-permalink: pretty
+permalink: /:categories/:year/:month/:day/:title/  # You can adjust this if you want a different URL structure
 
-# Include `_pages` directory in the collection
-include:
-  - _pages
+# Defaults
+defaults:
+  - scope:
+      path: ""  # Empty path means this applies to all files
+      type: "posts"
+    values:
+      layout: "post"  # Make sure your post layout is named 'post.html' in the _layouts directory
+  - scope:
+      path: ""  # This applies to all pages
+      type: "pages"
+    values:
+      layout: "default"
 
-# Any additional settings for Jekyll can go here
+# Plugins (add any plugins you are using here)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Markdown Processor
+markdown: kramdown
+kramdown:
+  input: GFM  # GitHub Flavored Markdown
+
+# Optional settings
 encoding: "utf-8"
